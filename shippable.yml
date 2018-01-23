@@ -1,0 +1,24 @@
+# Language setting
+language: java
+
+# Version number
+jdk:
+  - openjdk7
+  - openjdk8
+  - openjdk9 # supporting only in u16javall
+  - oraclejdk8
+  - oraclejdk9
+ 
+build:
+  pre_ci_boot:
+   image_name: drydock/u14javall
+   image_tag: master
+   pull: true
+   
+  ci:
+    - java -version
+    - echo $SHIPPABLE_JDK_VERSION
+    - sudo docker images
+    - mvn --version    
+    - ant -version 
+    - gradle --version  
