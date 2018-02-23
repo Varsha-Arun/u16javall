@@ -5,7 +5,7 @@ language: java
 jdk:
   - openjdk7
   - openjdk8
-  - openjdk9 # supporting only in u16javall
+  - openjdk9 
   - oraclejdk8
   - oraclejdk9
  
