@@ -69,7 +69,7 @@ jobs:
             - java -version
             - printf "\n===================================="
             
-     - TASK:
+      - TASK:
           name: java4
           runtime:
             options:
@@ -82,7 +82,7 @@ jobs:
             - java -version
             - printf "\n===================================="
      
-     - TASK:
+      - TASK:
           name: java5
           runtime:
             options:
