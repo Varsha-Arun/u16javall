@@ -35,6 +35,7 @@ jobs:
             options:
               imageName: drydock/u16javall
               imageTag: master
+              pull: true
           script:
             - echo "update-alternatives --set java /usr/lib/jvm/java-7-openjdk/jre/bin/java"
             - update-alternatives --set java /usr/lib/jvm/java-7-openjdk/jre/bin/java
