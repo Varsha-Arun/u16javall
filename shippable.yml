@@ -37,8 +37,8 @@ jobs:
               imageTag: master
               pull: true
           script:
-            - echo "update-alternatives --set java /usr/lib/jvm/java-7-openjdk/jre/bin/java"
-            - update-alternatives --set java /usr/lib/jvm/java-7-openjdk/jre/bin/java
+           # - echo "update-alternatives --set java /usr/lib/jvm/java-7-openjdk/jre/bin/java"
+          #  - update-alternatives --set java /usr/lib/jvm/java-7-openjdk/jre/bin/java
             - printf "\n===================================="
             - java -version
             - printf "\n===================================="
