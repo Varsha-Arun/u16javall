@@ -22,3 +22,75 @@ build:
     - mvn --version    
     - ant -version 
     - gradle --version  
+    
+jobs:
+  - name: javaImageTest
+    type: runSh
+    #runtime:
+    #  nodePool: testARM
+    steps:
+      - TASK:
+          name: java1
+          runtime:
+            options:
+              imageName: drydock/u16javall
+              imageTag: master
+          script:
+            - echo "update-alternatives --set java /usr/lib/jvm/java-7-openjdk/jre/bin/java"
+            - update-alternatives --set java /usr/lib/jvm/java-7-openjdk/jre/bin/java
+            - printf "\n===================================="
+            - java -version
+            - printf "\n===================================="
+            
+      - TASK:
+          name: java2
+          runtime:
+            options:
+              imageName: drydock/u16javall
+              imageTag: master
+          script:
+            - echo "update-alternatives --set java /usr/lib/jvm/java-8-openjdk/jre/bin/java"
+            - update-alternatives --set java /usr/lib/jvm/java-8-openjdk/jre/bin/java
+            - printf "\n===================================="
+            - java -version
+            - printf "\n===================================="
+
+      - TASK:
+          name: java3
+          runtime:
+            options:
+              imageName: drydock/u16javall
+              imageTag: master
+          script:
+            - echo "update-alternatives --set java /usr/lib/jvm/java-8-oracle/jre/bin/java"
+            - update-alternatives --set java /usr/lib/jvm/java-8-oracle/jre/bin/java
+            - printf "\n===================================="
+            - java -version
+            - printf "\n===================================="
+            
+     - TASK:
+          name: java4
+          runtime:
+            options:
+              imageName: drydock/u16javall
+              imageTag: master
+          script:
+            - echo "update-alternatives --set java /usr/lib/jvm/java-9-oracle/jre/bin/java"
+            - update-alternatives --set java /usr/lib/jvm/java-9-oracle/jre/bin/java
+            - printf "\n===================================="
+            - java -version
+            - printf "\n===================================="
+     
+     - TASK:
+          name: java5
+          runtime:
+            options:
+              imageName: drydock/u16javall
+              imageTag: master
+          script:
+            - echo "update-alternatives --set java /usr/lib/jvm/java-9-openjdk/jre/bin/java"
+            - update-alternatives --set java /usr/lib/jvm/java-9-openjdk/jre/bin/java
+            - printf "\n===================================="
+            - java -version
+            - printf "\n===================================="
+            
